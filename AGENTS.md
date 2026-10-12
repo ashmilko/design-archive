@@ -28,8 +28,8 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
   - *Discipline Color System (Alphabetical)*:
     - `All`: `#0167ec` (Electric Blue)
     - `AI/Prototyping`: `#00aacd` (Bright Aqua)
-    - `Art`: `#72e682` (Spring Green)
-    - `Graphic Design`: `#8ed3f8` (Sky Blue)
+    - `Art`: `#8ed3f8` (Sky Blue)
+    - `Graphic Design`: `#72e682` (Spring Green)
     - `Interaction Design`: `#d6e46a` (Chartreuse Lime)
     - `Physical Computing`: `#f4da7c` (Warm Yellow)
     - `Product Design`: `#ff9830` (Vivid Peach Tangerine)

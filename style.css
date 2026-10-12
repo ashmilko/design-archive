@@ -67,10 +67,10 @@
   /* --- Category Color Palette (User Specified) --- */
   --cat-color-all: #0167EC;
   --cat-color-ai-prototyping: #00AACD;
-  --cat-color-art: #72E682;
-  --cat-color-fine-art: #72E682;
-  --cat-color-graphic-design: #8ED3F8;
-  --cat-color-communication-design: #8ED3F8;
+  --cat-color-art: #8ED3F8;
+  --cat-color-fine-art: #8ED3F8;
+  --cat-color-graphic-design: #72E682;
+  --cat-color-communication-design: #72E682;
   --cat-color-interaction-design: #D6E46A;
   --cat-color-physical-computing: #F4DA7C;
   --cat-color-product-design: #FF9830;
