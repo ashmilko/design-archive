@@ -149,14 +149,14 @@ body {
 
 .cat-filter-btn {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13.5px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--ink-muted);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.6rem;
   padding: 0.35rem 0.25rem 0.45rem 0.25rem;
   border-radius: 0;
   border-bottom: 1px solid transparent;
@@ -178,8 +178,8 @@ body {
 
 .cat-swatch {
   display: inline-block;
-  width: 11px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
   border-radius: 2px;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -412,7 +412,7 @@ body:has(#view-catalog:checked) .archive-catalog,
 
 .item-title {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -427,7 +427,7 @@ body:has(#view-catalog:checked) .archive-catalog,
 
 .item-caption {
   font-family: var(--font-mono);
-  font-size: 9.5px;
+  font-size: 11px;
   color: var(--ink-muted);
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -482,7 +482,7 @@ body:has(#view-lines:checked) .archive-lines,
 
 .line-title {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--ink-primary);
@@ -495,7 +495,7 @@ body:has(#view-lines:checked) .archive-lines,
 
 .line-tag {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12.5px;
   color: var(--ink-muted);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -515,8 +515,8 @@ body:has(#view-lines:checked) .archive-lines,
 
 .tag-swatch {
   display: none;
-  width: 11px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -533,7 +533,7 @@ body:has(#view-lines:checked) .archive-lines,
 
 .line-date {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--ink-muted);
   letter-spacing: 0.03em;
   text-align: right;
@@ -721,7 +721,7 @@ body:has(#filter-3d:checked) .item:not([data-cat="3d"]),
 
 .overlay-title {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--ink-primary);
@@ -733,7 +733,7 @@ body:has(#filter-3d:checked) .item:not([data-cat="3d"]),
 
 .overlay-caption {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 500;
   color: var(--ink-muted);
   letter-spacing: 0.04em;
@@ -800,12 +800,9 @@ body:has(#filter-3d:checked) .item:not([data-cat="3d"]),
   flex-direction: column;
   gap: 0.5rem;
 }
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
 
 .overlay-desc {
-  font-size: 15px;
+  font-size: 16.5px;
   color: var(--ink-secondary);
   line-height: 1.6;
   margin-top: 0.5rem;
@@ -820,7 +817,7 @@ body:has(#filter-3d:checked) .item:not([data-cat="3d"]),
 
 .overlay-tools {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 13px;
   color: var(--ink-muted);
   letter-spacing: 0.03em;
   margin-top: 0.5rem;
@@ -832,10 +829,10 @@ body:has(#filter-3d:checked) .item:not([data-cat="3d"]),
 
 .overlay-tools-label {
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.05em;
   color: var(--ink-muted);
-  padding: 0.15rem 0.4rem;
+  padding: 0.15rem 0.45rem;
   border: 1px solid var(--border-subtle);
   border-radius: 4px;
   background-color: var(--bg-canvas);
@@ -855,7 +852,7 @@ body:has(#filter-3d:checked) .item:not([data-cat="3d"]),
 
 .overlay-section-label {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
