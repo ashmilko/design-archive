@@ -65,6 +65,7 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
   - `[Date]` (right side, right-aligned, e.g. `9/26`)
   - Generous vertical row padding: `1.15rem 0.6rem`.
   - Razor-thin hairline divider: `0.5px solid rgba(228, 228, 231, 0.85)` with fallback `1px solid rgba(228, 228, 231, 0.65)`.
+  - **Mobile Behavior**: On mobile (≤600px), the right column displays the date (`line-date`) instead of the category/swatch (`line-tag`), keeping the 2-column layout uncluttered and legible.
 - **Dynamic Tag-to-Dot Transformation**:
   - In unfiltered `All` view, the category text (`AI/PROTOTYPING`, `FINE ART`, etc.) is displayed.
   - When a user clicks a category at the top to filter, the text in the lines transforms into the solid chair-color dot/swatch for that category, eliminating redundant text.
