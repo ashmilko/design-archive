@@ -53,8 +53,8 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
   - Spacing: Generous spacing between categories (`gap: 1.35rem`).
   - Category Swatches: `11px × 11px` micro-rounded square swatches (`border-radius: 2px`).
 - **Interactive States**:
-  - **Hover**: The rounded colored square turns into an outlined square (`background-color: transparent !important`, retaining the 1.5px colored border).
-  - **Clicked / Active**: The square remains an outlined square, plus an underline matching the exact color and thickness of the list view divider lines (`border-bottom: 0.5px solid rgba(228, 228, 231, 0.85)` / `1px solid rgba(228, 228, 231, 0.65)`) underlines both the square and title text.
+  - **Hover**: Soft shaded background box area around the button (`background-color: var(--bg-hover)`, `border-radius: 4px`, padding `0.35rem 0.55rem`), while the colored square swatch remains solid filled.
+  - **Clicked / Active**: The colored square swatch remains solid filled, plus a hairline underline matching the list view divider lines (`border-bottom: 0.5px solid rgba(228, 228, 231, 0.85)` / `1.5px solid rgba(228, 228, 231, 0.65)`) highlights the active category.
 - **Zero Dependencies**: Powered purely with semantic CSS (`:checked` / `:has()` and sibling selectors).
 
 ### 4. View 1: The "Lines" View (Minimal Editorial Index)
@@ -91,6 +91,7 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
 
 ### 5. Detail View: Reading Overlay / Slide Sheet
 - Curatorial layout matching editorial standard:
+  - **Backdrop**: Soft frosted glass blur (`rgba(250, 250, 250, 0.65)` with `backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px)`), harmonizing directly with the main site canvas instead of a dark heavy overlay.
   - **Top Row**: Project Title (e.g. `Numbers`) and Tag/Date (e.g. `COMMUNICATION DESIGN • 10/23`) inline on the left, and outline-free `✕` close button on the right, all sitting on the exact same horizontal line. On hover, reveals a crisp full square (`32px × 32px`, `#162B55` background with white icon). Keyboard `Escape` and backdrop clicks also close the overlay.
   - **Hero Media**: Framed hero asset directly below the top bar.
   - **Project Metadata**: Follows image in exact order: narrative description (if present), then `[TOOLS]` badge and tools value.
