@@ -1,0 +1,17 @@
+# System & OS
+.DS_Store
+*.mov
+Screen Recording*
+IMG_7416*
+New Menu Launch*
+
+# Backups & Temporary files
+design_archive_backup/
+scratch/
+.vercel
+node_modules/
+
+# Other subprojects in this folder
+Lost&Found/
+experiment2/
+assets/
