@@ -67,8 +67,10 @@
   /* --- Category Color Palette (User Specified) --- */
   --cat-color-all: #0167EC;
   --cat-color-ai-prototyping: #00AACD;
-  --cat-color-communication-design: #8ED3F8;
+  --cat-color-art: #72E682;
   --cat-color-fine-art: #72E682;
+  --cat-color-graphic-design: #8ED3F8;
+  --cat-color-communication-design: #8ED3F8;
   --cat-color-interaction-design: #D6E46A;
   --cat-color-physical-computing: #F4DA7C;
   --cat-color-product-design: #FF9830;
@@ -189,8 +191,10 @@ body {
 /* Category Swatch Solid Colors (Normal State: filled with border for exact size) */
 .cat-swatch.cat-all { background-color: var(--cat-color-all); border: 1.5px solid var(--cat-color-all); }
 .cat-swatch.cat-ai-prototyping { background-color: var(--cat-color-ai-prototyping); border: 1.5px solid var(--cat-color-ai-prototyping); }
-.cat-swatch.cat-communication-design { background-color: var(--cat-color-communication-design); border: 1.5px solid var(--cat-color-communication-design); }
+.cat-swatch.cat-art { background-color: var(--cat-color-art); border: 1.5px solid var(--cat-color-art); }
 .cat-swatch.cat-fine-art { background-color: var(--cat-color-fine-art); border: 1.5px solid var(--cat-color-fine-art); }
+.cat-swatch.cat-graphic-design { background-color: var(--cat-color-graphic-design); border: 1.5px solid var(--cat-color-graphic-design); }
+.cat-swatch.cat-communication-design { background-color: var(--cat-color-communication-design); border: 1.5px solid var(--cat-color-communication-design); }
 .cat-swatch.cat-interaction-design { background-color: var(--cat-color-interaction-design); border: 1.5px solid var(--cat-color-interaction-design); }
 .cat-swatch.cat-physical-computing { background-color: var(--cat-color-physical-computing); border: 1.5px solid var(--cat-color-physical-computing); }
 .cat-swatch.cat-product-design { background-color: var(--cat-color-product-design); border: 1.5px solid var(--cat-color-product-design); }
@@ -207,10 +211,14 @@ body:has(#filter-all:checked) .pill-all,
 #filter-all:checked ~ .archive-toolbar .pill-all,
 body:has(#filter-ai-prototyping:checked) .pill-ai-prototyping,
 #filter-ai-prototyping:checked ~ .archive-toolbar .pill-ai-prototyping,
-body:has(#filter-communication-design:checked) .pill-communication-design,
-#filter-communication-design:checked ~ .archive-toolbar .pill-communication-design,
+body:has(#filter-art:checked) .pill-art,
+#filter-art:checked ~ .archive-toolbar .pill-art,
 body:has(#filter-fine-art:checked) .pill-fine-art,
 #filter-fine-art:checked ~ .archive-toolbar .pill-fine-art,
+body:has(#filter-graphic-design:checked) .pill-graphic-design,
+#filter-graphic-design:checked ~ .archive-toolbar .pill-graphic-design,
+body:has(#filter-communication-design:checked) .pill-communication-design,
+#filter-communication-design:checked ~ .archive-toolbar .pill-communication-design,
 body:has(#filter-interaction-design:checked) .pill-interaction-design,
 #filter-interaction-design:checked ~ .archive-toolbar .pill-interaction-design,
 body:has(#filter-physical-computing:checked) .pill-physical-computing,
@@ -233,10 +241,14 @@ body:has(#filter-3d:checked) .pill-3d,
   #filter-all:checked ~ .archive-toolbar .pill-all,
   body:has(#filter-ai-prototyping:checked) .pill-ai-prototyping,
   #filter-ai-prototyping:checked ~ .archive-toolbar .pill-ai-prototyping,
-  body:has(#filter-communication-design:checked) .pill-communication-design,
-  #filter-communication-design:checked ~ .archive-toolbar .pill-communication-design,
+  body:has(#filter-art:checked) .pill-art,
+  #filter-art:checked ~ .archive-toolbar .pill-art,
   body:has(#filter-fine-art:checked) .pill-fine-art,
   #filter-fine-art:checked ~ .archive-toolbar .pill-fine-art,
+  body:has(#filter-graphic-design:checked) .pill-graphic-design,
+  #filter-graphic-design:checked ~ .archive-toolbar .pill-graphic-design,
+  body:has(#filter-communication-design:checked) .pill-communication-design,
+  #filter-communication-design:checked ~ .archive-toolbar .pill-communication-design,
   body:has(#filter-interaction-design:checked) .pill-interaction-design,
   #filter-interaction-design:checked ~ .archive-toolbar .pill-interaction-design,
   body:has(#filter-physical-computing:checked) .pill-physical-computing,
@@ -255,10 +267,14 @@ body:has(#filter-all:checked) .pill-all .cat-swatch,
 #filter-all:checked ~ .archive-toolbar .pill-all .cat-swatch,
 body:has(#filter-ai-prototyping:checked) .pill-ai-prototyping .cat-swatch,
 #filter-ai-prototyping:checked ~ .archive-toolbar .pill-ai-prototyping .cat-swatch,
-body:has(#filter-communication-design:checked) .pill-communication-design .cat-swatch,
-#filter-communication-design:checked ~ .archive-toolbar .pill-communication-design .cat-swatch,
+body:has(#filter-art:checked) .pill-art .cat-swatch,
+#filter-art:checked ~ .archive-toolbar .pill-art .cat-swatch,
 body:has(#filter-fine-art:checked) .pill-fine-art .cat-swatch,
 #filter-fine-art:checked ~ .archive-toolbar .pill-fine-art .cat-swatch,
+body:has(#filter-graphic-design:checked) .pill-graphic-design .cat-swatch,
+#filter-graphic-design:checked ~ .archive-toolbar .pill-graphic-design .cat-swatch,
+body:has(#filter-communication-design:checked) .pill-communication-design .cat-swatch,
+#filter-communication-design:checked ~ .archive-toolbar .pill-communication-design .cat-swatch,
 body:has(#filter-interaction-design:checked) .pill-interaction-design .cat-swatch,
 #filter-interaction-design:checked ~ .archive-toolbar .pill-interaction-design .cat-swatch,
 body:has(#filter-physical-computing:checked) .pill-physical-computing .cat-swatch,
@@ -523,8 +539,10 @@ body:has(#view-lines:checked) .archive-lines,
 
 .tag-swatch.cat-all { background-color: var(--cat-color-all); }
 .tag-swatch.cat-ai-prototyping { background-color: var(--cat-color-ai-prototyping); }
-.tag-swatch.cat-communication-design { background-color: var(--cat-color-communication-design); }
+.tag-swatch.cat-art { background-color: var(--cat-color-art); }
 .tag-swatch.cat-fine-art { background-color: var(--cat-color-fine-art); }
+.tag-swatch.cat-graphic-design { background-color: var(--cat-color-graphic-design); }
+.tag-swatch.cat-communication-design { background-color: var(--cat-color-communication-design); }
 .tag-swatch.cat-interaction-design { background-color: var(--cat-color-interaction-design); }
 .tag-swatch.cat-physical-computing { background-color: var(--cat-color-physical-computing); }
 .tag-swatch.cat-product-design { background-color: var(--cat-color-product-design); }
@@ -594,10 +612,14 @@ body:has(#view-lines:checked) .archive-lines,
 /* Filtered state: transform line tag text into colored dot */
 body:has(#filter-ai-prototyping:checked) .line-tag .tag-label,
 #filter-ai-prototyping:checked ~ .archive-container .line-tag .tag-label,
-body:has(#filter-communication-design:checked) .line-tag .tag-label,
-#filter-communication-design:checked ~ .archive-container .line-tag .tag-label,
+body:has(#filter-art:checked) .line-tag .tag-label,
+#filter-art:checked ~ .archive-container .line-tag .tag-label,
 body:has(#filter-fine-art:checked) .line-tag .tag-label,
 #filter-fine-art:checked ~ .archive-container .line-tag .tag-label,
+body:has(#filter-graphic-design:checked) .line-tag .tag-label,
+#filter-graphic-design:checked ~ .archive-container .line-tag .tag-label,
+body:has(#filter-communication-design:checked) .line-tag .tag-label,
+#filter-communication-design:checked ~ .archive-container .line-tag .tag-label,
 body:has(#filter-interaction-design:checked) .line-tag .tag-label,
 #filter-interaction-design:checked ~ .archive-container .line-tag .tag-label,
 body:has(#filter-physical-computing:checked) .line-tag .tag-label,
@@ -613,10 +635,14 @@ body:has(#filter-3d:checked) .line-tag .tag-label,
 
 body:has(#filter-ai-prototyping:checked) .line-tag .tag-swatch,
 #filter-ai-prototyping:checked ~ .archive-container .line-tag .tag-swatch,
-body:has(#filter-communication-design:checked) .line-tag .tag-swatch,
-#filter-communication-design:checked ~ .archive-container .line-tag .tag-swatch,
+body:has(#filter-art:checked) .line-tag .tag-swatch,
+#filter-art:checked ~ .archive-container .line-tag .tag-swatch,
 body:has(#filter-fine-art:checked) .line-tag .tag-swatch,
 #filter-fine-art:checked ~ .archive-container .line-tag .tag-swatch,
+body:has(#filter-graphic-design:checked) .line-tag .tag-swatch,
+#filter-graphic-design:checked ~ .archive-container .line-tag .tag-swatch,
+body:has(#filter-communication-design:checked) .line-tag .tag-swatch,
+#filter-communication-design:checked ~ .archive-container .line-tag .tag-swatch,
 body:has(#filter-interaction-design:checked) .line-tag .tag-swatch,
 #filter-interaction-design:checked ~ .archive-container .line-tag .tag-swatch,
 body:has(#filter-physical-computing:checked) .line-tag .tag-swatch,
@@ -635,10 +661,14 @@ body:has(#filter-3d:checked) .line-tag .tag-swatch,
    ========================================================================== */
 body:has(#filter-ai-prototyping:checked) .item:not([data-cat="ai-prototyping"]),
 #filter-ai-prototyping:checked ~ .archive-container .item:not([data-cat="ai-prototyping"]),
-body:has(#filter-communication-design:checked) .item:not([data-cat="communication-design"]),
-#filter-communication-design:checked ~ .archive-container .item:not([data-cat="communication-design"]),
+body:has(#filter-art:checked) .item:not([data-cat="art"]),
+#filter-art:checked ~ .archive-container .item:not([data-cat="art"]),
 body:has(#filter-fine-art:checked) .item:not([data-cat="fine-art"]),
 #filter-fine-art:checked ~ .archive-container .item:not([data-cat="fine-art"]),
+body:has(#filter-graphic-design:checked) .item:not([data-cat="graphic-design"]),
+#filter-graphic-design:checked ~ .archive-container .item:not([data-cat="graphic-design"]),
+body:has(#filter-communication-design:checked) .item:not([data-cat="communication-design"]),
+#filter-communication-design:checked ~ .archive-container .item:not([data-cat="communication-design"]),
 body:has(#filter-interaction-design:checked) .item:not([data-cat="interaction-design"]),
 #filter-interaction-design:checked ~ .archive-container .item:not([data-cat="interaction-design"]),
 body:has(#filter-physical-computing:checked) .item:not([data-cat="physical-computing"]),

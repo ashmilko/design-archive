@@ -28,8 +28,8 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
   - *Discipline Color System (Alphabetical)*:
     - `All`: `#0167ec` (Electric Blue)
     - `AI/Prototyping`: `#00aacd` (Bright Aqua)
-    - `Communication Design`: `#8ed3f8` (Sky Blue)
-    - `Fine Art`: `#72e682` (Spring Green)
+    - `Art`: `#72e682` (Spring Green)
+    - `Graphic Design`: `#8ed3f8` (Sky Blue)
     - `Interaction Design`: `#d6e46a` (Chartreuse Lime)
     - `Physical Computing`: `#f4da7c` (Warm Yellow)
     - `Product Design`: `#ff9830` (Vivid Peach Tangerine)
@@ -49,7 +49,7 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
 
 ### 3. View Switcher & Filtering (Alphabetical Swatches + Segmented Icon Toggle)
 - **Floating Inline Toolbar**: Positioned directly below the title and above the archive items. Disconnected border line removed completely so the toolbar breathes naturally.
-- **Controls**: Category selectors sorted in alphabetical order (`All`, `AI/Prototyping`, `Communication Design`, `Fine Art`, `Interaction Design`, `Physical Computing`, `Product Design`, `Spatial Design`, `3D`).
+- **Controls**: Category selectors sorted in alphabetical order (`All`, `AI/Prototyping`, `Art`, `Graphic Design`, `Interaction Design`, `Physical Computing`, `Product Design`, `Spatial Design`, `3D`).
   - Spacing: Generous spacing between categories (`gap: 1.35rem`).
   - Category Swatches: `11px × 11px` micro-rounded square swatches (`border-radius: 2px`).
 - **Interactive States**:
@@ -100,15 +100,15 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
   - **Fitted Multi-Column Gallery**: Uses dynamic 2-column masonry flow (`columns: 2 340px`) where each image and video fits its own natural dimensions and aspect ratio (`height: auto; width: 100%`) without letterboxing, rigid vertical stretching, or iPhone screen cropping. Single assets expand to full width (`column-span: all`). On mobile, collapses smoothly into a single column.
 
 ### 6. Categories & Tags (8 Disciplines)
-- `AI/Prototyping`
-- `Fine Art`
-- `3D`
-- `Spatial Design`
-- `Product Design`
-- `Interaction Design`
-- `Communication Design`
-- `Physical Computing`
 - `All`
+- `AI/Prototyping`
+- `Art`
+- `Graphic Design`
+- `Interaction Design`
+- `Physical Computing`
+- `Product Design`
+- `Spatial Design`
+- `3D`
 
 ---
 

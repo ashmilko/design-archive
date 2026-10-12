@@ -15,3 +15,4 @@ node_modules/
 Lost&Found/
 experiment2/
 assets/
+.env*
