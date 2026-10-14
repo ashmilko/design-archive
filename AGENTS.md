@@ -43,14 +43,16 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
 - **Design Philosophy**: Stripped-down, quiet, image-first, and distraction-free. No heavy headers, banners, or redundant badge soup—just pure visual work, simple title, and caption.
 
 ### 2. Header & Main Title
-- **Archive Title**: Positioned cleanly above everything.
+- **Archive Title & Description**: Positioned cleanly above everything.
   - Text: `Design Archive`
   - Typography: `Haas Grot Disp Trial` (weight 500, size `40px`, color `#162B55`, letter-spacing `-0.02em`).
+  - Subtitle / Description: `A working, chronological archive of my work showing the breadth and depth of my design journey.`
+  - Description Typography: `var(--font-body)` (size `16.5px`, weight 400, color `#57575e`, line-height `1.6`, matching modal project descriptions).
 
 ### 3. View Switcher & Filtering (Alphabetical Swatches + Segmented Icon Toggle)
 - **Floating Inline Toolbar**: Positioned directly below the title and above the archive items. Disconnected border line removed completely so the toolbar breathes naturally.
 - **Controls**: Category selectors sorted in alphabetical order (`All`, `AI/Prototyping`, `Art`, `Graphic Design`, `Interaction Design`, `Physical Computing`, `Product Design`, `Spatial Design`, `3D`).
-  - Spacing: Generous spacing between categories (`gap: 1.35rem`).
+  - Spacing: Generous horizontal spacing (`column-gap: 1.15rem`), tightened vertical row spacing when stacked/wrapped (`row-gap: 0.45rem`).
   - Category Swatches: `11px × 11px` micro-rounded square swatches (`border-radius: 2px`).
 - **Interactive States**:
   - **Hover**: Soft shaded background box area around the button (`background-color: var(--bg-hover)`, `border-radius: 4px`, padding `0.35rem 0.55rem`), while the colored square swatch remains solid filled.
