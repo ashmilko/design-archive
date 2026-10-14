@@ -51,22 +51,34 @@
       <label for="filter-3d" class="cat-filter-btn pill-3d"><span class="cat-swatch cat-3d"></span> 3D</label>
     </div>
 
-    <div class="view-switcher-box" role="group" aria-label="View Switcher">
-      <label for="view-catalog" class="view-btn btn-catalog" title="Gallery Grid View" aria-label="Gallery Grid View">
-        <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-          <rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1"/>
-          <rect x="9" y="1.5" width="5.5" height="5.5" rx="1"/>
-          <rect x="1.5" y="9" width="5.5" height="5.5" rx="1"/>
-          <rect x="9" y="9" width="5.5" height="5.5" rx="1"/>
+    <div class="toolbar-actions">
+      <div class="thumbnail-slider-wrap" id="thumbnail-slider-wrap">
+        <svg class="slider-icon slider-icon-sm" viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true" title="Smallest thumbnails (12 in a row)">
+          <rect x="2" y="2" width="12" height="12" rx="1.5"/>
         </svg>
-      </label>
-      <label for="view-lines" class="view-btn btn-lines" title="Lines Index View" aria-label="Lines Index View">
-        <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-          <rect x="1.5" y="2.5" width="13" height="2" rx="1"/>
-          <rect x="1.5" y="7" width="13" height="2" rx="1"/>
-          <rect x="1.5" y="11.5" width="13" height="2" rx="1"/>
+        <input type="range" class="thumbnail-slider" id="thumbnail-size-slider" min="4" max="12" value="8" step="1" aria-label="Adjust thumbnail size" title="Adjust thumbnail size (12 to 4 in a row)">
+        <svg class="slider-icon slider-icon-lg" viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true" title="Largest thumbnails (4 in a row)">
+          <rect x="1" y="1" width="14" height="14" rx="2"/>
         </svg>
-      </label>
+      </div>
+
+      <div class="view-switcher-box" role="group" aria-label="View Switcher">
+        <label for="view-catalog" class="view-btn btn-catalog" title="Gallery Grid View" aria-label="Gallery Grid View">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1"/>
+            <rect x="9" y="1.5" width="5.5" height="5.5" rx="1"/>
+            <rect x="1.5" y="9" width="5.5" height="5.5" rx="1"/>
+            <rect x="9" y="9" width="5.5" height="5.5" rx="1"/>
+          </svg>
+        </label>
+        <label for="view-lines" class="view-btn btn-lines" title="Lines Index View" aria-label="Lines Index View">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+            <rect x="1.5" y="2.5" width="13" height="2" rx="1"/>
+            <rect x="1.5" y="7" width="13" height="2" rx="1"/>
+            <rect x="1.5" y="11.5" width="13" height="2" rx="1"/>
+          </svg>
+        </label>
+      </div>
     </div>
   </nav>
 
@@ -4784,6 +4796,45 @@
           }
         });
       });
+
+      // 6. Thumbnail size slider interaction (12 in a row down to 4 in a row)
+      const slider = document.getElementById('thumbnail-size-slider');
+      const iconSm = document.querySelector('.slider-icon-sm');
+      const iconLg = document.querySelector('.slider-icon-lg');
+
+      function setThumbSize(val) {
+        const v = parseInt(val, 10);
+        // Slider scale: 4 (left, small icon) -> 12 cols (smallest)
+        //               12 (right, large icon) -> 4 cols (largest)
+        const cols = 16 - v;
+        document.documentElement.style.setProperty('--grid-cols', cols);
+        if (slider && parseInt(slider.value, 10) !== v) {
+          slider.value = v;
+        }
+        try {
+          localStorage.setItem('archive-grid-slider-val', v);
+        } catch(e) {}
+      }
+
+      if (slider) {
+        slider.addEventListener('input', (e) => {
+          setThumbSize(e.target.value);
+        });
+
+        if (iconSm) {
+          iconSm.addEventListener('click', () => setThumbSize(4));
+        }
+        if (iconLg) {
+          iconLg.addEventListener('click', () => setThumbSize(12));
+        }
+
+        try {
+          const saved = localStorage.getItem('archive-grid-slider-val');
+          if (saved) {
+            setThumbSize(saved);
+          }
+        } catch(e) {}
+      }
 
       window.addEventListener('hashchange', updateModalPlayback);
       if (window.location.hash) {

@@ -78,10 +78,14 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
 
 ### 4. View 2: The "Image-First Gallery" (Catalog View)
 - **Reference**: Curated gallery reference (`WAS`, `media_1789400777859.jpg`) and Are.na board (`p.u.i. project 1`).
-- **Dense Archival Multi-Column Grid**: 
-  - Desktop: 8 columns across (`grid-template-columns: repeat(auto-fill, minmax(135px, 1fr))`, `gap: 1.15rem 1.15rem`).
-  - Tablet: 4–6 columns (`minmax(120px, 1fr)`).
-  - Mobile: 3–4 columns (`minmax(100px, 1fr)`).
+- **Interactive Thumbnail Size Slider & Grid Scaling**:
+  - Minimal slider situated directly next to the view switcher box.
+  - Scale: Range from smallest (12 in a row) to largest (4 in a row), defaulting to 8 in a row (`grid-template-columns: repeat(var(--grid-cols, 8), minmax(0, 1fr))`, `gap: 1.15rem 1.15rem`).
+  - Direction: Sliding left decreases thumbnail size (increasing density up to 12 columns); sliding right increases thumbnail size (down to 4 columns).
+  - Micro-square icons on either side allow single-click snapping to smallest (12) or largest (4).
+  - Automatically fades out when switching to Lines view.
+  - Remembers user preference across page reloads via `localStorage`.
+  - Mobile: On mobile (≤600px), slider is hidden and grid adapts responsively.
   - Pinned Top Item: `Whatisyourwhy` pinned at index 0.
   - Chronological Order: Sorted descending with newest/latest projects at the top.
 - **Thumbnail Dimensions & Aspect Ratio**: 
