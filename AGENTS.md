@@ -79,11 +79,11 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
 ### 4. View 2: The "Image-First Gallery" (Catalog View)
 - **Reference**: Curated gallery reference (`WAS`, `media_1789400777859.jpg`) and Are.na board (`p.u.i. project 1`).
 - **Interactive Thumbnail Size Slider & Grid Scaling**:
-  - Minimal slider situated directly next to the view switcher box.
+  - Located on the far right of all controls, adjacent to the segmented view switcher (`[ Lines | Grid ] [ Slider ]`).
   - Scale: Range from smallest (12 in a row) to largest (4 in a row), defaulting to 8 in a row (`grid-template-columns: repeat(var(--grid-cols, 8), minmax(0, 1fr))`, `gap: 1.15rem 1.15rem`).
   - Direction: Sliding left decreases thumbnail size (increasing density up to 12 columns); sliding right increases thumbnail size (down to 4 columns).
   - Micro-square icons on either side allow single-click snapping to smallest (12) or largest (4).
-  - Automatically fades out when switching to Lines view.
+  - Automatically hidden (`display: none`) when switching to Lines view, leaving zero gap.
   - Remembers user preference across page reloads via `localStorage`.
   - Mobile: On mobile (≤600px), slider is hidden and grid adapts responsively.
   - Pinned Top Item: `Whatisyourwhy` pinned at index 0.
@@ -92,7 +92,7 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
   - Square `1:1` media frames with `border-radius: 4px` (satisfying corner radius 4 requirement), subtle `1px solid #ebebeb` hairlines, and `margin-bottom: 0.35rem`. Grid view stays square.
   - **Video Performance (Hover Playback)**: Videos cue at first frame (`#t=0.001`, `preload="metadata"`) without autoplaying in the background. On hover, videos play smoothly; on mouse leave, they pause immediately, preventing GPU/CPU lag.
 - **Minimal Metadata**: Strictly project title beneath each thumbnail in compact monospace:
-  - **Title**: `11px`, `Geist Mono`, weight `500`, uppercase, letter-spacing `0.02em`.
+  - **Title**: `12.5px`, `Geist Mono`, weight `500`, uppercase, letter-spacing `0.02em`.
   - **Hover Reveal Interaction**: By default, title text (`.item-meta`) is hidden (`opacity: 0; visibility: hidden`) while reserving compact negative white space (`min-height: 1.5em`) so there is zero layout shift. On hover, the title smoothly reveals (`opacity: 1; visibility: visible`). Rows sit closely together with just enough breathing room for the hover title.
 
 ### 5. Detail View: Reading Overlay / Slide Sheet

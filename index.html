@@ -52,17 +52,14 @@
     </div>
 
     <div class="toolbar-actions">
-      <div class="thumbnail-slider-wrap" id="thumbnail-slider-wrap">
-        <svg class="slider-icon slider-icon-sm" viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true" title="Smallest thumbnails (12 in a row)">
-          <rect x="2" y="2" width="12" height="12" rx="1.5"/>
-        </svg>
-        <input type="range" class="thumbnail-slider" id="thumbnail-size-slider" min="4" max="12" value="8" step="1" aria-label="Adjust thumbnail size" title="Adjust thumbnail size (12 to 4 in a row)">
-        <svg class="slider-icon slider-icon-lg" viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true" title="Largest thumbnails (4 in a row)">
-          <rect x="1" y="1" width="14" height="14" rx="2"/>
-        </svg>
-      </div>
-
       <div class="view-switcher-box" role="group" aria-label="View Switcher">
+        <label for="view-lines" class="view-btn btn-lines" title="Lines Index View" aria-label="Lines Index View">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+            <rect x="1.5" y="2.5" width="13" height="2" rx="1"/>
+            <rect x="1.5" y="7" width="13" height="2" rx="1"/>
+            <rect x="1.5" y="11.5" width="13" height="2" rx="1"/>
+          </svg>
+        </label>
         <label for="view-catalog" class="view-btn btn-catalog" title="Gallery Grid View" aria-label="Gallery Grid View">
           <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
             <rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1"/>
@@ -71,13 +68,16 @@
             <rect x="9" y="9" width="5.5" height="5.5" rx="1"/>
           </svg>
         </label>
-        <label for="view-lines" class="view-btn btn-lines" title="Lines Index View" aria-label="Lines Index View">
-          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-            <rect x="1.5" y="2.5" width="13" height="2" rx="1"/>
-            <rect x="1.5" y="7" width="13" height="2" rx="1"/>
-            <rect x="1.5" y="11.5" width="13" height="2" rx="1"/>
-          </svg>
-        </label>
+      </div>
+
+      <div class="thumbnail-slider-wrap" id="thumbnail-slider-wrap">
+        <svg class="slider-icon slider-icon-sm" viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true" title="Smallest thumbnails (12 in a row)">
+          <rect x="2" y="2" width="12" height="12" rx="1.5"/>
+        </svg>
+        <input type="range" class="thumbnail-slider" id="thumbnail-size-slider" min="4" max="12" value="8" step="1" aria-label="Adjust thumbnail size" title="Adjust thumbnail size (12 to 4 in a row)">
+        <svg class="slider-icon slider-icon-lg" viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true" title="Largest thumbnails (4 in a row)">
+          <rect x="1" y="1" width="14" height="14" rx="2"/>
+        </svg>
       </div>
     </div>
   </nav>
