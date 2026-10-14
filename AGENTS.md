@@ -46,7 +46,7 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
 - **Archive Title & Description**: Positioned cleanly above everything.
   - Text: `Design Archive`
   - Typography: `Haas Grot Disp Trial` (weight 500, size `40px`, color `#162B55`, letter-spacing `-0.02em`).
-  - Subtitle / Description: `A working, chronological archive of my work showing the breadth and depth of my design journey.`
+  - Subtitle / Description: `A rolling, chronological archive of my work showing the breadth and depth of my design journey.`
   - Description Typography: `var(--font-body)` (`Haas Grot Disp Trial 55 Roman`, size `16px`, weight 400, color `#57575E`, line-height `1.6`, matching modal project descriptions, full width without early wrapping).
 
 ### 3. View Switcher & Filtering (Alphabetical Swatches + Segmented Icon Toggle)
