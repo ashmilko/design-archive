@@ -1,3 +1,8 @@
+*.mov
+Lost&Found
+Lost&Found/**
+design_archive_backup
+design_archive_backup/**
 .git
 .git/**
 .github
