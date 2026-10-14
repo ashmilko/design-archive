@@ -22,10 +22,22 @@
 }
 
 @font-face {
+  font-family: 'Haas Grot Disp Trial 55 Roman';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Haas Grot Disp Trial 55 Roman'),
+       local('Haas Grot Disp Trial'),
+       url('https://framerusercontent.com/assets/6fEIirQbdEmTYPjKSNMBJnrEcy4.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Haas Grot Disp Trial';
   font-style: normal;
   font-weight: 400;
-  src: url('https://framerusercontent.com/assets/6fEIirQbdEmTYPjKSNMBJnrEcy4.woff2') format('woff2');
+  src: local('Haas Grot Disp Trial 55 Roman'),
+       local('Haas Grot Disp Trial'),
+       url('https://framerusercontent.com/assets/6fEIirQbdEmTYPjKSNMBJnrEcy4.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -33,7 +45,8 @@
   font-family: 'Haas Grot Disp Trial';
   font-style: normal;
   font-weight: 500;
-  src: url('https://framerusercontent.com/assets/fIHZlYJA5GJPKag0QQceMPZNlI.woff2') format('woff2');
+  src: local('Haas Grot Disp Trial 65 Medium'),
+       url('https://framerusercontent.com/assets/fIHZlYJA5GJPKag0QQceMPZNlI.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -61,7 +74,7 @@
   --border-divider: #e4e4e7;
 
   --font-display: "Haas Grot Disp Trial", "Inter", -apple-system, sans-serif;
-  --font-body: "Inter", "Haas Grot Disp Trial", -apple-system, sans-serif;
+  --font-body: "Haas Grot Disp Trial 55 Roman", "Haas Grot Disp Trial", "Inter", -apple-system, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
 
   /* --- Category Color Palette (User Specified) --- */
@@ -133,13 +146,13 @@ body {
 
 .archive-main-desc {
   font-family: var(--font-body);
-  font-size: 16.5px;
+  font-size: 16px;
   font-weight: 400;
-  color: var(--ink-secondary);
+  color: #57575E;
   line-height: 1.6;
   letter-spacing: 0.01em;
   margin: 0.65rem 0 0 0;
-  max-width: 680px;
+  max-width: 100%;
 }
 
 /* --- Minimal Inline Toolbar (Chair Color Rounded Squares) --- */
@@ -150,15 +163,13 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  row-gap: 0.85rem;
-  column-gap: 1.5rem;
+  gap: 1.5rem;
 }
 
 .filter-group {
   display: flex;
   align-items: center;
-  row-gap: 0.45rem;
-  column-gap: 1.15rem;
+  gap: 1.35rem;
   flex-wrap: wrap;
 }
 
@@ -825,9 +836,11 @@ body:has(#filter-3d:checked) .item:not([data-cat="3d"]),
 }
 
 .overlay-desc {
-  font-size: 16.5px;
-  color: var(--ink-secondary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #57575E;
   line-height: 1.6;
+  letter-spacing: 0.01em;
   margin-top: 0.5rem;
   max-width: 680px;
 }
@@ -941,12 +954,7 @@ body:has(#filter-3d:checked) .item:not([data-cat="3d"]),
   .archive-toolbar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.85rem;
-  }
-
-  .filter-group {
-    row-gap: 0.4rem;
-    column-gap: 0.9rem;
+    gap: 1rem;
   }
 
   .archive-catalog {
