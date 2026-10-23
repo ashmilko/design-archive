@@ -20,9 +20,15 @@
   <!-- ==========================================================================
        PURE CSS STATE MANAGEMENT (Radio Triggers)
        ========================================================================== -->
-  <!-- View Mode Switcher (Grid Active by Default) -->
+  <!-- View Mode Switcher (Grid on Desktop, List on Mobile) -->
   <input type="radio" name="view-mode" id="view-catalog" checked class="sr-only">
   <input type="radio" name="view-mode" id="view-lines" class="sr-only">
+  <script>
+    // Immediately default to ultra-lightweight List View on mobile to prevent memory lag
+    if (window.matchMedia('(max-width: 768px), (pointer: coarse)').matches) {
+      document.getElementById('view-lines').checked = true;
+    }
+  </script>
 
   <!-- Category Filters (Alphabetical Order) -->
   <input type="radio" name="cat-filter" id="filter-all" checked class="sr-only">
@@ -843,7 +849,7 @@
           <span class="line-date">9/26</span>
         </a>
         <div class="line-hover-preview is-landscape">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Whatisyourwhy1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Whatisyourwhy1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="ai-prototyping">
@@ -869,7 +875,7 @@
           <span class="line-date">9/26</span>
         </a>
         <div class="line-hover-preview is-landscape">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/How%27s%20the%20weather1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/How%27s%20the%20weather1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="art">
@@ -947,7 +953,7 @@
           <span class="line-date">3/26</span>
         </a>
         <div class="line-hover-preview is-landscape">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Helper1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Helper1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="ai-prototyping">
@@ -960,7 +966,7 @@
           <span class="line-date">3/26</span>
         </a>
         <div class="line-hover-preview is-portrait">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Presents1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Presents1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="graphic-design">
@@ -973,7 +979,7 @@
           <span class="line-date">3/26</span>
         </a>
         <div class="line-hover-preview is-landscape">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Versailles1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Versailles1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="interaction-design">
@@ -986,7 +992,7 @@
           <span class="line-date">2/26</span>
         </a>
         <div class="line-hover-preview is-landscape">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/AI%20Bubble1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/AI%20Bubble1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="graphic-design">
@@ -1012,7 +1018,7 @@
           <span class="line-date">12/25</span>
         </a>
         <div class="line-hover-preview is-landscape">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Relay1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Relay1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="product-design">
@@ -1038,7 +1044,7 @@
           <span class="line-date">10/25</span>
         </a>
         <div class="line-hover-preview is-portrait">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Microinteractions1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Microinteractions1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="interaction-design">
@@ -1064,7 +1070,7 @@
           <span class="line-date">9/25</span>
         </a>
         <div class="line-hover-preview is-landscape">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Steam%20Data%20Visualization1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Steam%20Data%20Visualization1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="art">
@@ -1077,7 +1083,7 @@
           <span class="line-date">5/24</span>
         </a>
         <div class="line-hover-preview is-portrait">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Midnight%20Smack1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Midnight%20Smack1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="graphic-design">
@@ -1090,7 +1096,7 @@
           <span class="line-date">4/24</span>
         </a>
         <div class="line-hover-preview is-portrait">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Showcase%20Poster1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Showcase%20Poster1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="spatial-design">
@@ -1233,7 +1239,7 @@
           <span class="line-date">9/23</span>
         </a>
         <div class="line-hover-preview is-landscape">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/MDC%20Intro1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/MDC%20Intro1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="physical-computing">
@@ -1519,7 +1525,7 @@
           <span class="line-date">11/21</span>
         </a>
         <div class="line-hover-preview is-landscape">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Animated%20Spheres1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Animated%20Spheres1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="3d">
@@ -1688,7 +1694,7 @@
           <span class="line-date">1/20</span>
         </a>
         <div class="line-hover-preview is-landscape">
-          <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/A%20New%20Perspective1.mp4#t=0.001" muted loop playsinline preload="none"></video>
+          <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/A%20New%20Perspective1.mp4#t=0.001" muted loop playsinline preload="none"></video>
         </div>
       </li>
       <li class="line-row item" data-cat="art">
@@ -2052,7 +2058,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Whatisyourwhy1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Whatisyourwhy1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         <p class="overlay-desc">A fun interactive experience and thought experiment where users can input their answers and also collect answers from strangers on the internet</p>
@@ -2110,7 +2116,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/How%27s%20the%20weather1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/How%27s%20the%20weather1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         <p class="overlay-desc">Rapid hand-coding exploration exploring colors and interactive gradients</p>
@@ -2292,7 +2298,7 @@
         <h3 class="overlay-section-label">Additional Project Assets</h3>
         <div class="overlay-assets-grid">
           <div class="overlay-media-wrap">
-            <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Tap%20to%20Map2.mp4" controls loop playsinline muted preload="metadata"></video>
+            <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Tap%20to%20Map2.mp4" controls loop playsinline muted preload="none"></video>
           </div>
           <div class="overlay-media-wrap">
             <img src="./design%20archive/product%20design/Tap%20to%20Map3.JPG" alt="Tap to Map asset" loading="lazy">
@@ -2337,7 +2343,7 @@
         <h3 class="overlay-section-label">Additional Project Assets</h3>
         <div class="overlay-assets-grid">
           <div class="overlay-media-wrap">
-            <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Cold%20Bloom2.mp4" controls loop playsinline muted preload="metadata"></video>
+            <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Cold%20Bloom2.mp4" controls loop playsinline muted preload="none"></video>
           </div>
           <div class="overlay-media-wrap">
             <img src="./design%20archive/graphic%20design/Cold%20Bloom3.png" alt="Cold Bloom asset" loading="lazy">
@@ -2369,7 +2375,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Helper1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Helper1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         <p class="overlay-desc">Neighboring community app prototype</p>
@@ -2394,7 +2400,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Presents1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Presents1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         <p class="overlay-desc">Trained AI model that detects &amp; allows you to share emotions</p>
@@ -2404,7 +2410,7 @@
         <h3 class="overlay-section-label">Additional Project Assets</h3>
         <div class="overlay-assets-grid">
           <div class="overlay-media-wrap">
-            <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Presents2.mp4" controls loop playsinline muted preload="metadata"></video>
+            <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Presents2.mp4" controls loop playsinline muted preload="none"></video>
           </div>
           <div class="overlay-media-wrap">
             <img src="./design%20archive/AI%3APrototyping/Presents3.png" alt="Presents asset" loading="lazy">
@@ -2433,7 +2439,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Versailles1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Versailles1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         <p class="overlay-desc">Dynamic wordmark with animations and poster design</p>
@@ -2472,7 +2478,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/AI%20Bubble1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/AI%20Bubble1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         <p class="overlay-desc">Live interactive experience showcasing the AI bubble</p>
@@ -2553,7 +2559,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Relay1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Relay1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         <p class="overlay-desc">AR disaster sign language translator and emotion recognition</p>
@@ -2619,7 +2625,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Microinteractions1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Microinteractions1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         <p class="overlay-desc">Prototyping for a survey testing microinteractions</p>
@@ -2629,7 +2635,7 @@
         <h3 class="overlay-section-label">Additional Project Assets</h3>
         <div class="overlay-assets-grid">
           <div class="overlay-media-wrap">
-            <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Microinteractions2.mp4" controls loop playsinline muted preload="metadata"></video>
+            <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Microinteractions2.mp4" controls loop playsinline muted preload="none"></video>
           </div>
         </div>
       </div>
@@ -2668,7 +2674,7 @@
             <img src="./design%20archive/interaction%20design/Glass%20Chorus3.png" alt="Glass Chorus asset" loading="lazy">
           </div>
           <div class="overlay-media-wrap">
-            <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Glass%20Chorus4.mp4" controls loop playsinline muted preload="metadata"></video>
+            <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Glass%20Chorus4.mp4" controls loop playsinline muted preload="none"></video>
           </div>
           <div class="overlay-media-wrap">
             <img src="./design%20archive/interaction%20design/Glass%20Chorus5.png" alt="Glass Chorus asset" loading="lazy">
@@ -2694,7 +2700,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Steam%20Data%20Visualization1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Steam%20Data%20Visualization1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         <p class="overlay-desc">Player game genre exploration experience</p>
@@ -2719,7 +2725,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Midnight%20Smack1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Midnight%20Smack1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         <p class="overlay-desc">Game design and illustrated UI</p>
@@ -2764,7 +2770,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Showcase%20Poster1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Showcase%20Poster1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
     </article>
   </aside>
@@ -3087,7 +3093,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/MDC%20Intro1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/MDC%20Intro1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
     </article>
   </aside>
@@ -3185,7 +3191,7 @@
         <h3 class="overlay-section-label">Additional Project Assets</h3>
         <div class="overlay-assets-grid">
           <div class="overlay-media-wrap">
-            <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/OZEN2.mp4" controls loop playsinline muted preload="metadata"></video>
+            <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/OZEN2.mp4" controls loop playsinline muted preload="none"></video>
           </div>
           <div class="overlay-media-wrap">
             <img src="./design%20archive/Physical%20Computing/OZEN3.jpg" alt="OZEN asset" loading="lazy">
@@ -3626,7 +3632,7 @@
             <img src="./design%20archive/Physical%20Computing/Luxband2.JPG" alt="Luxband asset" loading="lazy">
           </div>
           <div class="overlay-media-wrap">
-            <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Luxband3.mp4" controls loop playsinline muted preload="metadata"></video>
+            <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Luxband3.mp4" controls loop playsinline muted preload="none"></video>
           </div>
           <div class="overlay-media-wrap">
             <img src="./design%20archive/Physical%20Computing/Luxband4.JPG" alt="Luxband asset" loading="lazy">
@@ -3747,7 +3753,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Animated%20Spheres1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/Animated%20Spheres1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         
@@ -4077,7 +4083,7 @@
         </a>
       </header>
       <div class="overlay-media-wrap">
-        <video src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/A%20New%20Perspective1.mp4" controls loop playsinline muted preload="metadata"></video>
+        <video data-src="https://pub-d099849cedf545f4a13830c16fc5d7bf.r2.dev/videos/A%20New%20Perspective1.mp4" controls loop playsinline muted preload="none"></video>
       </div>
       <div class="overlay-info">
         <p class="overlay-desc">Interactive sculpture and installation</p>
@@ -4773,6 +4779,10 @@
           row.addEventListener('mouseenter', (e) => {
             updatePosition(e);
             if (video) {
+              if (video.dataset.src && !video.getAttribute('src')) {
+                video.setAttribute('src', video.dataset.src);
+                video.load();
+              }
               const p = video.play();
               if (p !== undefined) p.catch(() => {});
             }
