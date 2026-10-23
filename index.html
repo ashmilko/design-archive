@@ -4704,79 +4704,117 @@
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Grid view: play video strictly on hover, pause on leave
-      document.querySelectorAll('.gallery-item').forEach(item => {
-        const video = item.querySelector('video');
-        if (!video) return;
+      const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
 
-        item.addEventListener('mouseenter', () => {
-          const p = video.play();
-          if (p !== undefined) p.catch(() => {});
+      // MOBILE OPTIMIZATION: Prevent mobile WebKit / iOS Safari GPU decoder crashes
+      if (isMobile) {
+        // 1. Remove all 14 invisible hover-preview videos completely on mobile
+        document.querySelectorAll('.line-hover-preview video').forEach(v => {
+          v.removeAttribute('src');
+          v.load();
+          v.remove();
         });
+      }
 
-        item.addEventListener('mouseleave', () => {
-          video.pause();
-        });
+      // 2. Modal overlays: lazy load video sources ONLY when the modal is actually opened
+      document.querySelectorAll('.reading-overlay video').forEach(v => {
+        const currentSrc = v.getAttribute('src');
+        if (currentSrc) {
+          v.dataset.src = currentSrc;
+          v.removeAttribute('src');
+          v.load();
+        }
       });
 
-      // 2. Lines view: cursor-tracking floating preview + video playback
-      document.querySelectorAll('.line-row').forEach(row => {
-        const preview = row.querySelector('.line-hover-preview');
-        if (!preview) return;
-        const video = preview.querySelector('video');
+      // 3. Grid view: play video strictly on hover (desktop only)
+      if (!isMobile) {
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          const video = item.querySelector('video');
+          if (!video) return;
 
-        const updatePosition = (e) => {
-          const isPortrait = preview.classList.contains('is-portrait');
-          const w = preview.offsetWidth || (isPortrait ? 200 : 280);
-          const h = preview.offsetHeight || (isPortrait ? 285 : 195);
-
-          let x = e.clientX + 16;
-          let y = e.clientY - (h / 2);
-
-          // Boundary checks to stay within window viewport
-          if (x + w > window.innerWidth - 16) {
-            x = e.clientX - w - 16;
-          }
-          if (y < 16) {
-            y = 16;
-          }
-          if (y + h > window.innerHeight - 16) {
-            y = window.innerHeight - h - 16;
-          }
-
-          preview.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-        };
-
-        row.addEventListener('mouseenter', (e) => {
-          updatePosition(e);
-          if (video) {
+          item.addEventListener('mouseenter', () => {
             const p = video.play();
             if (p !== undefined) p.catch(() => {});
-          }
+          });
+
+          item.addEventListener('mouseleave', () => {
+            video.pause();
+          });
         });
 
-        row.addEventListener('mousemove', (e) => {
-          updatePosition(e);
-        });
+        // Lines view: cursor-tracking floating preview + video playback (desktop only)
+        document.querySelectorAll('.line-row').forEach(row => {
+          const preview = row.querySelector('.line-hover-preview');
+          if (!preview) return;
+          const video = preview.querySelector('video');
 
-        row.addEventListener('mouseleave', () => {
-          if (video) video.pause();
-        });
-      });
+          const updatePosition = (e) => {
+            const isPortrait = preview.classList.contains('is-portrait');
+            const w = preview.offsetWidth || (isPortrait ? 200 : 280);
+            const h = preview.offsetHeight || (isPortrait ? 285 : 195);
 
-      // 3. Modal overlays: play active modal video when opened, pause when closed
+            let x = e.clientX + 16;
+            let y = e.clientY - (h / 2);
+
+            // Boundary checks to stay within window viewport
+            if (x + w > window.innerWidth - 16) {
+              x = e.clientX - w - 16;
+            }
+            if (y < 16) {
+              y = 16;
+            }
+            if (y + h > window.innerHeight - 16) {
+              y = window.innerHeight - h - 16;
+            }
+
+            preview.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+          };
+
+          row.addEventListener('mouseenter', (e) => {
+            updatePosition(e);
+            if (video) {
+              const p = video.play();
+              if (p !== undefined) p.catch(() => {});
+            }
+          });
+
+          row.addEventListener('mousemove', (e) => {
+            updatePosition(e);
+          });
+
+          row.addEventListener('mouseleave', () => {
+            if (video) video.pause();
+          });
+        });
+      }
+
+      // 4. Modal overlays: dynamically load and play active modal video, unload when closed
       const updateModalPlayback = () => {
         const activeHash = window.location.hash;
         document.querySelectorAll('.reading-overlay').forEach(overlay => {
           const videos = overlay.querySelectorAll('video');
           if (activeHash && overlay.matches(activeHash)) {
+            // Restore video src for this active modal
+            videos.forEach(v => {
+              if (v.dataset.src && !v.getAttribute('src')) {
+                v.setAttribute('src', v.dataset.src);
+                v.load();
+              }
+            });
             const heroVideo = overlay.querySelector('.overlay-media-wrap video');
             if (heroVideo) {
               const p = heroVideo.play();
               if (p !== undefined) p.catch(() => {});
             }
           } else {
-            videos.forEach(v => v.pause());
+            videos.forEach(v => {
+              v.pause();
+              // On mobile, unload closed modal videos to free iOS hardware decoders
+              if (isMobile && v.dataset.src && v.getAttribute('src')) {
+                v.removeAttribute('src');
+                v.load();
+              }
+            });
           }
         });
       };
