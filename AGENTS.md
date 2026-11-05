@@ -86,8 +86,7 @@ A personal digital garden built from the ground up to cultivate thoughts, essays
   - Automatically hidden (`display: none`) when switching to Lines view, leaving zero gap.
   - Remembers user preference across page reloads via `localStorage`.
   - Mobile: On mobile (≤600px), slider is hidden and grid adapts responsively.
-  - Pinned Top Item: `Whatisyourwhy` pinned at index 0.
-  - Chronological Order: Sorted descending with newest/latest projects at the top.
+  - Chronological Order: Sorted descending with newest/latest projects at the top (strictly chronological, no pinned items).
 - **Thumbnail Dimensions & Aspect Ratio**: 
   - Square `1:1` media frames with `border-radius: 4px` (satisfying corner radius 4 requirement), subtle `1px solid #ebebeb` hairlines, and `margin-bottom: 0.35rem`. Grid view stays square.
   - **Video Performance (Hover Playback)**: Videos cue at first frame (`#t=0.001`, `preload="metadata"`) without autoplaying in the background. On hover, videos play smoothly; on mouse leave, they pause immediately, preventing GPU/CPU lag.
