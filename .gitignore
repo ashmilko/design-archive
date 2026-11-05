@@ -1,6 +1,9 @@
 # System & OS
 .DS_Store
 *.mov
+*.MOV
+*.mp4
+*.MP4
 Screen Recording*
 IMG_7416*
 New Menu Launch*
@@ -15,6 +18,7 @@ node_modules/
 Lost&Found/
 experiment2/
 assets/
+ep-lab/
 .env*
 dist/
 .wrangler/
